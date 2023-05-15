@@ -1,0 +1,18 @@
+default: &default
+  adapter: mysql2
+  username: root
+  password: MAkc-2023
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: blog
+
+test:
+  <<: *default
+  database: blog
+
+production:
+  <<: *default
+  database: db/production.sqlite3
